@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Define database connection url
-const URL = process.env.URL || 'mongodb://127.0.0.1:27017/st-lucia-elections';
+const URL = process.env.URL || 'mongodb+srv://Ravi:Ivar0212@main.q1ewq.mongodb.net/test';
 
 mongoose.set('useCreateIndex', true);
 
