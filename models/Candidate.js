@@ -1,6 +1,4 @@
 const mongoose = require('../config/db');
-const Party = require('../models/Party');
-const District = require('../models/District');
 
 const candidateSchema = new mongoose.Schema({
     name: {
@@ -27,14 +25,14 @@ const candidateSchema = new mongoose.Schema({
       desc: "The party the candidate represents.",
       trim: true,
       type: mongoose.Schema.Types.ObjectId,
-      ref: Party,
+      ref: 'Party',
       required: true
     },
     district: {
       desc: "The district the candidate represents.",
       trim: true,
       type: mongoose.Schema.Types.ObjectId,
-      ref: District,
+      ref: 'District',
       required: true
     },
     comments: {
@@ -49,5 +47,5 @@ const candidateSchema = new mongoose.Schema({
     timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" },
   },
 );
-//
+
 module.exports = mongoose.model('Candidate', candidateSchema);
