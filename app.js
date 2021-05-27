@@ -24,10 +24,11 @@ const authRouter = require('./routes/auth');
 const testRouter = require('./routes/test');
 
 // Allow frontend app to communicate
-/*const corsOptions = {
-  origin: "http://localhost:8081",
+const corsOptions = {
+  //origin: "http://localhost:8081",
+  origin: "*",
   credentials: true
-};*/
+};
 
 const app = express();
 
@@ -42,7 +43,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
