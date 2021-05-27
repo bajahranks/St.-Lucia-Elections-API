@@ -27,7 +27,7 @@ const testRouter = require('./routes/test');
 const corsOptions = {
   //origin: "http://localhost:8081",
   origin: "*",
-  credentials: true
+  //credentials: true
 };
 
 const app = express();
