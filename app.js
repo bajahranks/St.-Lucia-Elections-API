@@ -24,10 +24,10 @@ const authRouter = require('./routes/auth');
 const testRouter = require('./routes/test');
 
 // Allow frontend app to communicate
-const corsOptions = {
+/*const corsOptions = {
   origin: "http://localhost:8081",
   credentials: true
-};
+};*/
 
 const app = express();
 
