@@ -37,13 +37,11 @@ exports.findAll = (req, res) => {
   const name = req.query.name;
   const condition = name ? { name: { $regex: new RegExp(name), $options: "i" } } : {};
 
-  //const user = User.findById({_id: req.user});
-
   Section.find(condition)
     .sort({ name: 1 }) // Alphabetical order. -1 for descending order.
     .populate('pollingStation')
     .then(result => {
-      res.status(200).send({result: result});
+      res.status(200).send(result);
     })
     .catch(err => {
       res.status(500).send({ message: err.message || "Error finding section" });
